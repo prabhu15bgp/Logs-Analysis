@@ -6,7 +6,7 @@
 ### How to Run?
 
 #### Requirments:
-  * [Python3](https://www.python.org/)
+  * [Python](https://www.python.org/)
   * [Vagrant](https://www.vagrantup.com/)
   * [VirtualBox](https://www.virtualbox.org/)
   
@@ -16,7 +16,7 @@
   2. Download or Clone [fullstack-nanodegree-vm](https://github.com/udacity/fullstack-nanodegree-vm) repository.
   3. Download the [data](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip) from here.
   4. Unzip this file after downloading it. The file inside is called newsdata.sql.
-  5. Copy the newsdata.sql file and content of this current repository, by either downloading or cloning it from
+  5. Copy the newsdata.sql file and content of this current repository, by either downloading or cloning it from [here](https://github.com/prabhu15bgp/Logs-Analysis)
 
 
 #### Launching the Virtual Machine:
@@ -55,7 +55,7 @@
     order by views desc;
   ```
   
-  4. Create vier error_log_view using:
+  4. Create view error_log_view using:
   ```
     create view error_log_view as select date(time),round(100.0*sum(case log.status when '200 OK' 
     then 0 else 1 end)/count(log.status),2) as "Percent Error" from log group by date(time) 
