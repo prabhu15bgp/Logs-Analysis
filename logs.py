@@ -1,3 +1,5 @@
+#! /usr/bin/env python2
+
 import psycopg2
 DBNAME = "news"
 
@@ -37,7 +39,7 @@ def get_query_results(query):
 
 def print_query_results(query_result):
 	print(query_result['title'])
-    for result in query_result['results']:
+    for result in query_result['result']:
         print ('\t\t' + str(result[0]) + ' ===> ' + str(result[1]) + ' Views')
 
 
