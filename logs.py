@@ -13,14 +13,14 @@ group by authors.name order by views desc"""
 query3 = "select * from error_log_view where \"Percent Error\" > 1"
 
 # Initializing Store results
-query1_result = arr()
+query1_result = dict()
 query1_result['title'] = "\n1. The 3 most popular articles of all time are:\n"
 
-query2_result = arr()
+query2_result = dict()
 query2_result['title'] = """\n2. The most popular article authors of
 all time are:\n"""
 
-query3_result = arr()
+query3_result = dict()
 query3_result['title'] = """\n3. Days with more than 1% of request that
 lead to an error:\n"""
 
