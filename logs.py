@@ -34,17 +34,17 @@ def get_query_results(query):
     db.close()
     return results
 
-	
+
 def print_query_results(query_result):
-    print(query_result['title'])
+	print(query_result['title'])
     for result in query_result['results']:
         print ('\t\t' + str(result[0]) + ' ===> ' + str(result[1]) + ' Views')
 
 
 def print_error_query_results(query_result):
-    print (query_result['title'])
+    print(query_result['title'])
     for result in query_result['results']:
-        print ('\t\t' + str(result[0]) + ' ===> ' + str(result[1]) + ' %%')
+        print('\t\t' + str(result[0]) + ' ===> ' + str(result[1]) + ' %%')
 
 
 # stores query result
