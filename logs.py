@@ -24,28 +24,24 @@ query3_result = dict()
 query3_result['title'] = """\n3. Days with more than 1% of request that
 lead to an error:\n"""
 
-
 # function returns query result
 def get_query_results(query):
-    db = psycopg2.connect(database = DBNAME)
+    db = psycopg2.connect(database=DBNAME)
     c = db.cursor()
     c.execute(query)
     results = c.fetchall()
     db.close()
     return results
 
-
 def print_query_results(query_result):
-    print (query_result['title'])
+    print(query_result['title'])
     for result in query_result['results']:
-        print ('\t\t' + str(result[0]) + ' ===> ' + str(result[1]) + ' Views')
-
+        print ('\t\t'+str(result[0]) +' ===>'+str(result[1])+' Views')
 
 def print_error_query_results(query_result):
     print (query_result['title'])
     for result in query_result['results']:
-        print ('\t\t' + str(result[0]) + ' ===> ' + str(result[1]) + ' %%')
-
+        print ('\t\t'+ str(result[0])+' ===> '+str(result[1])+' %%')
 
 # stores query result
 query1_result['results'] = get_query_results(query1)
@@ -56,4 +52,3 @@ query3_result['results'] = get_query_results(query3)
 print_query_results(query1_result)
 print_query_results(query2_result)
 print_error_query_results(query3_result)
-
